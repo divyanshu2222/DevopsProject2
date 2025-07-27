@@ -16,8 +16,7 @@ spec:
         app: pandacloud-app
     spec:
       containers:
-      - name: pandacloud-container
-        image: 309395755719.dkr.ecr.us-east-1.amazonaws.com/amazon-prime:latest
-        ports:
-        - containerPort: 3000
-...
+        - name: pandacloud-container
+          image: 336300526060.dkr.ecr.us-east-1.amazonaws.com/amazon-prime:latest
+          ports:
+            - containerPort: 3000

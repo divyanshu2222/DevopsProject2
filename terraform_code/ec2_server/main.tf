@@ -147,7 +147,10 @@ resource "aws_instance" "my-ec2" {
   tags = {
     Name = var.server_name
   }
-  
+
+# Using user_data to run a script at instance launch
+# user_data = templatefile("./setup.sh", {})
+
     # USING REMOTE-EXEC PROVISIONER TO INSTALL PACKAGES
   provisioner "remote-exec" {
     # ESTABLISHING SSH CONNECTION WITH EC2
@@ -157,6 +160,7 @@ resource "aws_instance" "my-ec2" {
       user        = "ubuntu"
       host        = self.public_ip
     }
+
 
     inline = [
       # Install AWS CLI
